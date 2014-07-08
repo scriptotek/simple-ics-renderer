@@ -4,7 +4,8 @@ use Sabre\VObject;
 require 'vendor/autoload.php';
 
 /**
- * Function to var_dump inside <pre>
+ * Function to var_dump inside <pre>. Useful if you want to display more
+ * information about your event: use pre_dump($vcal) to see what's inside.
  */
 function pre_dump($var) {
     echo '<pre>';
@@ -22,8 +23,13 @@ if (isset($_GET['days'])) $days = abs(intval($_GET['days']));
 $days--;
 
 
-// Set path to ics-file
+// Config
 $path_to_ics = 'https://mail.uio.no/owa/calendar/l.h.kvale@ub.uio.no/Realfagsbiblioteket/calendar.ics';
+$title_text = 'Vilhelm Bjerknes Hus';
+$header_text = 'Foajeen @ Vilhelm Bjerknes Hus';
+$time_text = 'Tid';
+$activity_text = 'Aktivitet';
+$none_found_text = 'Ingen aktiviteter funnet';
 
 // Get data and parse
 $data = file_get_contents ($path_to_ics);
@@ -38,7 +44,7 @@ $today = new DateTime();
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Vilhelm Bjerknes Hus</title>
+    <title><?= $title_text ?></title>
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="clock.js"></script>
     <link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
@@ -48,9 +54,9 @@ $today = new DateTime();
 <body>
 <div id="wrapper">
 
-<table class="infoskjerm-caption">
+<table class="infoscreen-caption">
 	<tr>
-		<td class="infoskjerm-left">Foajeen @ Vilhelm Bjerknes hus</td><td class="infoskjerm-right"><span id="ur"></span></td>
+		<td class="infoscreen-left"><?= $header_text ?></td><td class="infoscreen-right"><span id="ur"></span></td>
 	</tr>
 </table>
 
@@ -76,14 +82,16 @@ foreach($vcal->vevent as $event) {
 
 		echo '
 		<tr>
-			<td class="time">
-				<b>Tid</b><br> ' .
+			<th>' . $time_text . '</th>
+			<th>' . $activity_text . '</th>
+		</tr>
+		<tr>
+			<td class="time">' .
+				$starts->format('d.M') . '<br>' .
 				$starts->format('H:i') . ' - ' .
-				$starts->format('H:i') . '<br> ' .
-				$starts->format('d.M') . '
+				$starts->format('H:i') . '
 			</td>
-			<td>
-				<b>Aktivitet</b><br>' .
+			<td>' .
 				$event->summary . '
 			</td>
 		</tr>
@@ -97,7 +105,7 @@ foreach($vcal->vevent as $event) {
 if ($i === 0) {
 	echo '
 	<tr>
-		<td style="padding: 20px;">Ingen aktiviteter funnet</td>
+		<td style="padding: 20px;">' . $none_found_text . '</td>
 	</tr>';
 }
 

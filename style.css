@@ -10,45 +10,45 @@ html, body {
 
 table.smaller th,
 table.smaller td {
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-family: Arial, sans-serif;
 }
 
-table.infoskjerm-caption{
+table.infoscreen-caption{
     width: 100%;
     border: none;
 }
 
-table.infoskjerm-caption td {
-    font-size: 1.2em;
+table.infoscreen-caption td {
+    font-size: 1.5em;
     font-weight: bold; 
     color: #96948e;
     border: none;
 }
 
-tr.infoskjerm-gray td {
+tr.infoscreen-gray td {
     background-color: #eee;
     color: #000;
 }
 
-td.infoskjerm-gray {
+td.infoscreen-gray {
     background-color: #eee;
     color: #000;
 }
 
-tr.infoskjerm-gray th {
+tr.infoscreen-gray th {
     background-color: #dbdee2;
     color: #000;
 }
 
-td.infoskjerm-right,
-th.infoskjerm-right {
+td.infoscreen-right,
+th.infoscreen-right {
     white-space:nowrap;
     text-align: right;
 }
 
-td.infoskjerm-left,
-th.infoskjerm-left{
+td.infoscreen-left,
+th.infoscreen-left{
   text-align: left;}
 
 table.smaller {
