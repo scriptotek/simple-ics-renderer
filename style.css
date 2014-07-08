@@ -1,14 +1,83 @@
+html, body {
+    overflow: hidden;
+    background-color: #fff;
+}
+
 #wrapper {
-     width: 90%;
-     margin: 0 auto;
-     margin-top: 5%;
+    margin: 0 auto;
+    width:90%;
 }
 
-table {
-    border-collapse: collapse;
+table.smaller th,
+table.smaller td {
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+}
+
+table.infoskjerm-caption{
     width: 100%;
+    border: none;
 }
 
-table, th, td {
-    border: 1px solid black;
+table.infoskjerm-caption td {
+    font-size: 1.2em;
+    font-weight: bold; 
+    color: #96948e;
+    border: none;
+}
+
+tr.infoskjerm-gray td {
+    background-color: #eee;
+    color: #000;
+}
+
+td.infoskjerm-gray {
+    background-color: #eee;
+    color: #000;
+}
+
+tr.infoskjerm-gray th {
+    background-color: #dbdee2;
+    color: #000;
+}
+
+td.infoskjerm-right,
+th.infoskjerm-right {
+    white-space:nowrap;
+    text-align: right;
+}
+
+td.infoskjerm-left,
+th.infoskjerm-left{
+  text-align: left;}
+
+table.smaller {
+    width: 100%;
+    padding: 1px; 
+    border: 1px solid #d0d0d0; 
+    border-collapse:collapse;
+}
+
+table.smaller tr td,
+table.smaller tr th {
+    line-height: normal;
+    padding-left: 0.75ex;
+    padding-right: 0.75ex;
+    padding-top: 0.75ex;
+    padding-bottom: 0.75ex;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    vertical-align: top !important;
+    border: none !important;
+    border-right: 1px solid #d0d0d0 !important;
+    border-bottom: 1px solid #d0d0d0 !important;
+}
+  
+table.smaller tr,
+table.smaller th {
+    text-align: left;
+}
+
+.time {
+    width: 20%;
 }
