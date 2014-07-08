@@ -60,12 +60,8 @@ foreach($vcal->vevent as $event) {
 				</td>
 			</tr>
 		';
-	}
-
-    //echo (string)$event->dtstart, ": ", $event->summary, "<br><br>";
+	};
 }
-
-// pre_dump($vcal);
 
 ?>
 
