@@ -1,0 +1,14 @@
+#wrapper {
+     width: 90%;
+     margin: 0 auto;
+     margin-top: 5%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
