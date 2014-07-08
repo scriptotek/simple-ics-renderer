@@ -12,10 +12,11 @@ function pre_dump($var) {
     echo '</pre>';
 }
 
-// Get data from ics-file
+// Set path to ics-file
 $path_to_ics = 'https://mail.uio.no/owa/calendar/l.h.kvale@ub.uio.no/Realfagsbiblioteket/calendar.ics';
+
+// Get data and parse
 $data = file_get_contents ($path_to_ics);
-// Parse with Sabre\VObject
 $vcal = VObject\Reader::read($data);
 
 // Find iso 8601 date of today:
@@ -35,7 +36,6 @@ $weekFromNow->add(new DateInterval('P7D')); // Jump 7 days ahead
 </head>
 
 <body>
-
 <div id="wrapper">
 
 <table>
@@ -46,19 +46,19 @@ $weekFromNow->add(new DateInterval('P7D')); // Jump 7 days ahead
 foreach($vcal->vevent as $event) {
 	$starts = $event->dtstart->getDateTime();
 	
-	// If event is between $today and $weekFromNow
+	// If event is between $today and $weekFromNow display info
 	if ($starts > $today && $starts < $weekFromNow) {
 		$ends = $event->dtend->getDateTime();
 		echo '
-			<tr>
-				<th>' . $event->summary . '</th>
-			</tr>
-			<tr>
-				<td>
-					<b>' . $starts->format('Y-m-d H:i') . '</b><br>
-					' . $event->description . '
-				</td>
-			</tr>
+		<tr>
+			<th>' . $event->summary . '</th>
+		</tr>
+		<tr>
+			<td>
+				<b>' . $starts->format('Y-m-d H:i') . '</b><br>
+				' . $event->description . '
+			</td>
+		</tr>
 		';
 	};
 }
@@ -68,6 +68,6 @@ foreach($vcal->vevent as $event) {
 </table>
 
 </div>
-
 </body>
+
 </html>
