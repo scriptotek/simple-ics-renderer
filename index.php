@@ -26,9 +26,9 @@ $days--;
 // Config
 $path_to_ics = 'https://mail.uio.no/owa/calendar/l.h.kvale@ub.uio.no/Realfagsbiblioteket/calendar.ics';
 $title_text = 'Vilhelm Bjerknes Hus';
-$header_text = 'Foajeen @ Vilhelm Bjerknes Hus';
-$time_text = 'Tid';
-$activity_text = 'Aktivitet';
+$header_text = 'Happenings @ Vilhelm Bjerknes Hus';
+$time_text = '';
+$activity_text = '';
 $none_found_text = 'Ingen aktiviteter funnet';
 
 // Get data and parse
@@ -54,7 +54,7 @@ $today = new DateTime();
 <body>
 
 <div id="bg">
-	<img src="haeckel.jpg" alt="">
+	<img src="haeckel2.png" alt="">
 </div>
 
 <div id="wrapper">
@@ -96,9 +96,9 @@ foreach($vcal->vevent as $event) {
 				$starts->format('H:i') . ' - ' .
 				$starts->format('H:i') . '
 			</td>
-			<td>' .
+			<th>' .
 				$event->summary . '
-			</td>
+			</th>
 		</tr>
 		';
 
