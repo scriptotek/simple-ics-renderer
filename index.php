@@ -92,7 +92,7 @@ foreach($vcal->vevent as $event) {
 		</tr>
 		<tr>
 			<td class="time">' .
-				$starts->format('d.M') . '<br>' .
+				$starts->format('d.F') . '<br>' .
 				$starts->format('H:i') . ' - ' .
 				$starts->format('H:i') . '
 			</td>
