@@ -38,6 +38,22 @@ $vcal = VObject\Reader::read($data);
 // Create DateTime-object of today
 $today = new DateTime();
 
+// Array for norwegian month names
+$mnds = array(
+	"Januar",
+	"Februar",
+	"Mars",
+	"April",
+	"Mai",
+	"Juni",
+	"Juli",
+	"August",
+	"September",
+	"Oktober",
+	"November",
+	"Desember"
+);
+
 ?>
 
 <!doctype html>
@@ -84,15 +100,11 @@ foreach($vcal->vevent as $event) {
 	// Now we can display only events that are <= $days ahead of today
 	if ($diff > 0 && $diff <= $days) {
 		$ends = $event->dtend->getDateTime();
-
+		$mnd_index = (int) $starts->format('n') - 1;
 		echo '
 		<tr>
-			<th>' . $time_text . '</th>
-			<th>' . $activity_text . '</th>
-		</tr>
-		<tr>
 			<td class="time">' .
-				$starts->format('d.F') . '<br>' .
+				$starts->format('d') . '. ' . $mnds[$mnd_index] . '<br>' .
 				$starts->format('H:i') . ' - ' .
 				$starts->format('H:i') . '
 			</td>
