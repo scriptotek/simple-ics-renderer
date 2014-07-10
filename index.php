@@ -24,12 +24,12 @@ $days--;
 
 
 // Config
-$path_to_ics = 'calendar.ics';
-$title_text = 'Calendar';
-$header_text = 'Showing events from my calendar';
-$time_text = 'Time';
-$activity_text = 'Activity';
-$none_found_text = 'No activities found';
+$path_to_ics = 'https://mail.uio.no/owa/calendar/l.h.kvale@ub.uio.no/Realfagsbiblioteket/calendar.ics';
+$title_text = 'Vilhelm Bjerknes Hus';
+$header_text = 'Foajeen @ Vilhelm Bjerknes Hus';
+$time_text = 'Tid';
+$activity_text = 'Aktivitet';
+$none_found_text = 'Ingen aktiviteter funnet';
 
 // Get data and parse
 $data = file_get_contents ($path_to_ics);
@@ -52,6 +52,11 @@ $today = new DateTime();
 </head>
 
 <body>
+
+<div id="bg">
+	<img src="Ernst_Haeckel_5.jpg" alt="">
+</div>
+
 <div id="wrapper">
 
 <table class="infoscreen-caption">
