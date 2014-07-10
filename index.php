@@ -54,7 +54,7 @@ $today = new DateTime();
 <body>
 
 <div id="bg">
-	<img src="Ernst_Haeckel_5.jpg" alt="">
+	<img src="haeckel.jpg" alt="">
 </div>
 
 <div id="wrapper">

@@ -2,6 +2,10 @@ html, body {
     overflow: hidden;
 }
 
+/*
+background image trick found here:;
+http://css-tricks.com/perfect-full-page-background-image/
+*/
 #bg {
   position: fixed; 
   top: -50%; 
@@ -9,7 +13,7 @@ html, body {
   width: 200%; 
   height: 200%;
   z-index: -1;
-  opacity: .25;
+  opacity: .1;
 }
 #bg img {
   position: absolute; 
