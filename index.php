@@ -40,18 +40,18 @@ $today = new DateTime();
 
 // Array for norwegian month names
 $mnds = array(
-	"Januar",
-	"Februar",
-	"Mars",
-	"April",
-	"Mai",
-	"Juni",
-	"Juli",
-	"August",
-	"September",
-	"Oktober",
-	"November",
-	"Desember"
+	"januar",
+	"februar",
+	"mars",
+	"april",
+	"nai",
+	"juni",
+	"juli",
+	"august",
+	"september",
+	"oktober",
+	"november",
+	"desember"
 );
 
 ?>
@@ -106,7 +106,7 @@ foreach($vcal->vevent as $event) {
 			<td class="time">' .
 				$starts->format('d') . '. ' . $mnds[$mnd_index] . '<br>' .
 				$starts->format('H:i') . ' - ' .
-				$starts->format('H:i') . '
+				$ends->format('H:i') . '
 			</td>
 			<th>' .
 				$event->summary . '
