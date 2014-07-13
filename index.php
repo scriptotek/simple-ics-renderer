@@ -26,7 +26,7 @@ $days--;
 // Config
 $path_to_ics = 'https://mail.uio.no/owa/calendar/l.h.kvale@ub.uio.no/Realfagsbiblioteket/calendar.ics';
 $title_text = 'Vilhelm Bjerknes Hus';
-$header_text = 'Happenings @ Vilhelm Bjerknes Hus';
+$header_text = '<img src="UiO_UBREAL_Segl_A.png" alt="Vilhelm Bjerknes Hus"><br><br> Hva skjer?';
 $time_text = '';
 $activity_text = '';
 $none_found_text = 'Ingen aktiviteter funnet';
@@ -77,7 +77,7 @@ $mnds = array(
 
 <table class="infoscreen-caption">
 	<tr>
-		<td class="infoscreen-left"><?= $header_text ?></td><td class="infoscreen-right"><span id="ur"></span></td>
+		<td class="infoscreen-left"><?= $header_text ?></td>
 	</tr>
 </table>
 
