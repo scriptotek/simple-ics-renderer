@@ -70,7 +70,7 @@ $mnds = array(
 <body>
 
 <div id="bg">
-	<img src="haeckel2.png" alt="">
+	<img src="haeckel_new.png" alt="">
 </div>
 
 <div id="wrapper">

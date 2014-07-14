@@ -13,7 +13,7 @@ http://css-tricks.com/perfect-full-page-background-image/
   width: 50%; 
   height: 50%;
   z-index: -1;
-  opacity: .1;
+  opacity: 1;
 }
 #bg img {
   position: absolute; 
